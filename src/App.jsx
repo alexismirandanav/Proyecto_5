@@ -1,35 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { AppBar, Box, Container, Toolbar, Typography, Button } from '@mui/material';
+import { Routes, Route, Link } from 'react-router-dom';
+import ErrorBoundary from './components/ErrorBoundary.jsx';
+import UFByDate from './components/UFByDate.jsx';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Box>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+            UF Chile • Proyecto 5 - UDD Bootcamp
+          </Typography>
+          <Button color="inherit" component={Link} to="/uf">Consultar UF</Button>
+        </Toolbar>
+      </AppBar>
 
-export default App
+      <Container sx={{ mt: 3 }}>
+        <Routes>
+          <Route path="/uf" element={<ErrorBoundary><UFByDate /></ErrorBoundary>} />
+          <Route path="*" element={<ErrorBoundary><UFByDate /></ErrorBoundary>} />
+        </Routes>
+      </Container>
+    </Box>
+  );
+}
