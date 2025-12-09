@@ -15,6 +15,14 @@ Abre `http://localhost:5173/uf` y consulta con formato **DD-MM-AAAA**.
 - React Router
 - MUI
 
+
+## Screenshots
+
+![App Screenshot](./src/img/uf-1.jpg)
+![App Screenshot](./src/img/uf-2.jpg)
+![App Screenshot](./src/img/uf-3.jpg)
+
+
 ## API (findic.cl)
 - Endpoint por fecha: `https://findic.cl/api/uf/dd-mm-aaaa`
 - Docs y ejemplos del indicador UF: https://findic.cl/docs/endpoints/ , https://findic.cl/docs/endpoints/indicador/ , https://findic.cl/api/uf
